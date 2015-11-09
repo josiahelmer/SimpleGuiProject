@@ -4,6 +4,8 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import gui.controller.GuiController;
 /**
  * 
@@ -23,7 +25,6 @@ public class GuiPanel extends JPanel
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
 		firstButton = new JButton("Do not click the button");
-		
 		firstTextField = new JTextField("You can type words in here");
 		
 	
@@ -39,9 +40,9 @@ public class GuiPanel extends JPanel
 		this.add(firstButton);
 		this.add(firstTextField);
 	}
-
+	
 	private void setupLayout()
-	{	
+		{	
 		baseLayout.putConstraint(SpringLayout.NORTH, firstButton, 54, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, firstTextField, 81, SpringLayout.SOUTH, firstButton);
 		baseLayout.putConstraint(SpringLayout.WEST, firstButton, 0, SpringLayout.WEST, firstTextField);
@@ -50,6 +51,12 @@ public class GuiPanel extends JPanel
 
 	private void setupListeners()
 	{
-		
+		firstButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				firstTextField.setText("don't click it");
+			}
+		});
 	}
 }
