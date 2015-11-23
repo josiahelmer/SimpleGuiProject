@@ -9,8 +9,8 @@ import java.awt.event.ActionEvent;
 import gui.controller.GuiController;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
-import java.awt.Color;
 import java.awt.event.MouseMotionListener;
+import java.awt.*;
 
 /**
  * 
@@ -66,6 +66,14 @@ public class GuiPanel extends JPanel
 			public void mouseClicked(MouseEvent clicked)
 			{
 //				changeRandomColor();
+				if(SwingUtilities.isLeftMouseButton(clicked))
+				{
+					firstTextField.setText("you are using the left click");
+				}
+				else if(SwingUtilities.sRightMouseButton(clicked))
+				{
+					firstTextField.setText("you right clicked")
+				}
 			}
 			public void mouseEntered(MouseEvent entered)
 			{
@@ -88,12 +96,21 @@ public class GuiPanel extends JPanel
 		{
 			public void mouseMoved(MouseEvent moved)
 			{
-				changeRandomColor();
+				firstButton.setText("Mouse X:" + moved.getX() + " Mouse Y:"  +moved.getY());	
+				
+				if((moved.getX() > 25 && moved.getX() < 40) && (moved.getY() > 5 && moved.getY() < 70))
+				{
+					changeRandomColor();
+					
+				}
 			}
 			
 			public void mouseDragged(MouseEvent dragged)
 			{
-				
+				if(dragged.isAltDown())
+				{
+					firstTextField.setText("you held alt and dragged!");
+				}
 			}
 			
 		});
