@@ -72,7 +72,7 @@ public class GuiPanel extends JPanel
 				}
 				else if(SwingUtilities.sRightMouseButton(clicked))
 				{
-					firstTextField.setText("you right clicked")
+					firstTextField.setText("you right clicked");
 				}
 			}
 			public void mouseEntered(MouseEvent entered)
