@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import gui.controller.GuiController;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
-import java.awt.event.*;
+import java.awt.Color;
 /**
  * 
  * @author jelm9149
@@ -82,5 +82,13 @@ public class GuiPanel extends JPanel
 				
 			}
 		});
+	}
+	private void changeRandomColor()
+	{
+		int red, green, blue;
+		
+		red = (int) (Math.random() * 256);
+		green = (int) (Math.random() * 256);
+		blue = (int) (Math.random() * 256);
 	}
 }
