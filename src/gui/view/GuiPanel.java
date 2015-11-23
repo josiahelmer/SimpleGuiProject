@@ -7,6 +7,9 @@ import javax.swing.SpringLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import gui.controller.GuiController;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.*;
 /**
  * 
  * @author jelm9149
@@ -26,8 +29,6 @@ public class GuiPanel extends JPanel
 		baseLayout = new SpringLayout();
 		firstButton = new JButton("Do not click the button");
 		firstTextField = new JTextField("You can type words in here");
-		
-	
 	
 	setupPanel();
 	setupLayout();
@@ -56,6 +57,29 @@ public class GuiPanel extends JPanel
 			public void actionPerformed(ActionEvent click)
 			{
 				firstTextField.setText("don't click it");
+			}
+		});
+		this.addMouseListener(new MouseListener()
+		{
+			public void mouseClicked(MouseEvent clicked)
+			{
+				
+			}
+			public void mouseEntered(MouseEvent entered)
+			{
+				
+			}
+			public void mouseExited(MouseEvent exited)
+			{
+				
+			}
+			public void mouseReleased(MouseEvent released)
+			{
+				
+			}
+			public void mousePressed(MouseEvent pressed)
+			{
+				
 			}
 		});
 	}
