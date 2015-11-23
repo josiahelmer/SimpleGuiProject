@@ -10,6 +10,8 @@ import gui.controller.GuiController;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
 import java.awt.Color;
+import java.awt.event.MouseMotionListener;
+
 /**
  * 
  * @author jelm9149
@@ -81,6 +83,19 @@ public class GuiPanel extends JPanel
 			{
 				
 			}
+		});
+		this.addMouseMotionListener(new MouseMotionListener()
+		{
+			public void mouseMoved(MouseEvent moved)
+			{
+				changeRandomColor();
+			}
+			
+			public void mouseDragged(MouseEvent dragged)
+			{
+				
+			}
+			
 		});
 	}
 	private void changeRandomColor()
